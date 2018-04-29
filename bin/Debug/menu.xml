@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<DishList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MenuList>
+    <Dish xsi:type="Drinks">
+      <Weight>500</Weight>
+      <Calories>484.5</Calories>
+      <Ingredients>
+        <Ingredients>
+          <Ingredient xsi:type="DairyProduct">
+            <Weight>250</Weight>
+            <Calories>0.6</Calories>
+            <CaloriesPerGram>0.6</CaloriesPerGram>
+            <Name>Cow milk</Name>
+            <Origin>Milk</Origin>
+          </Ingredient>
+          <Ingredient xsi:type="DairyProduct">
+            <Weight>100</Weight>
+            <Calories>2.01</Calories>
+            <CaloriesPerGram>2.01</CaloriesPerGram>
+            <Name>Vanilla ice cream</Name>
+            <Origin>IceCream</Origin>
+          </Ingredient>
+          <Ingredient xsi:type="Fruit">
+            <Weight>150</Weight>
+            <Calories>0.89</Calories>
+            <CaloriesPerGram>0.89</CaloriesPerGram>
+            <Name>Banana</Name>
+            <Colour>Yellow</Colour>
+            <Sugars>0.12</Sugars>
+          </Ingredient>
+        </Ingredients>
+      </Ingredients>
+      <Name>Milkshake</Name>
+      <CaloriesPerServing>484.5</CaloriesPerServing>
+      <PortionSize>500</PortionSize>
+      <Temperature>Icy</Temperature>
+    </Dish>
+    <Dish xsi:type="MainCourse">
+      <Weight>260</Weight>
+      <Calories>416.4</Calories>
+      <Ingredients>
+        <Ingredients>
+          <Ingredient xsi:type="DairyProduct">
+            <Weight>100</Weight>
+            <Calories>0.6</Calories>
+            <CaloriesPerGram>0.6</CaloriesPerGram>
+            <Name>Cow milk</Name>
+            <Origin>Milk</Origin>
+          </Ingredient>
+          <Ingredient xsi:type="DairyProduct">
+            <Weight>40</Weight>
+            <Calories>4.02</Calories>
+            <CaloriesPerGram>4.02</CaloriesPerGram>
+            <Name>Cheese</Name>
+            <Origin>Cheese</Origin>
+          </Ingredient>
+          <Ingredient xsi:type="Vegetable">
+            <Weight>40</Weight>
+            <Calories>0.89</Calories>
+            <CaloriesPerGram>0.89</CaloriesPerGram>
+            <Name>Tomato</Name>
+            <Colour>Red</Colour>
+            <Pungency>Mild</Pungency>
+          </Ingredient>
+          <Ingredient>
+            <Weight>80</Weight>
+            <Calories>2</Calories>
+            <CaloriesPerGram>2</CaloriesPerGram>
+            <Name>Eggs</Name>
+          </Ingredient>
+        </Ingredients>
+      </Ingredients>
+      <Name>Omelette</Name>
+      <CaloriesPerServing>416.4</CaloriesPerServing>
+      <PortionSize>260</PortionSize>
+      <Vegeterian>true</Vegeterian>
+      <Meal>Breakfast</Meal>
+    </Dish>
+  </MenuList>
+</DishList>

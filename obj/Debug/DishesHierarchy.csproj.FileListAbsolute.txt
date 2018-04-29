@@ -1,0 +1,14 @@
+c:\users\kater\documents\visual studio 2015\Projects\DishesHierarchy\bin\Debug\DishesHierarchy.exe.config
+C:\Users\kater\documents\visual studio 2015\Projects\DishesHierarchy\bin\Debug\DishesHierarchy.exe
+C:\Users\kater\documents\visual studio 2015\Projects\DishesHierarchy\bin\Debug\DishesHierarchy.pdb
+C:\Users\kater\documents\visual studio 2015\Projects\DishesHierarchy\obj\Debug\MainWindow.g.cs
+C:\Users\kater\documents\visual studio 2015\Projects\DishesHierarchy\obj\Debug\App.g.cs
+C:\Users\kater\documents\visual studio 2015\Projects\DishesHierarchy\obj\Debug\DishesHierarchy_MarkupCompile.cache
+C:\Users\kater\documents\visual studio 2015\Projects\DishesHierarchy\obj\Debug\DishesHierarchy_MarkupCompile.lref
+C:\Users\kater\documents\visual studio 2015\Projects\DishesHierarchy\obj\Debug\MainWindow.baml
+C:\Users\kater\documents\visual studio 2015\Projects\DishesHierarchy\obj\Debug\DishesHierarchy.g.resources
+C:\Users\kater\documents\visual studio 2015\Projects\DishesHierarchy\obj\Debug\DishesHierarchy.Properties.Resources.resources
+C:\Users\kater\documents\visual studio 2015\Projects\DishesHierarchy\obj\Debug\DishesHierarchy.csproj.GenerateResource.Cache
+C:\Users\kater\documents\visual studio 2015\Projects\DishesHierarchy\obj\Debug\DishesHierarchy.exe
+C:\Users\kater\documents\visual studio 2015\Projects\DishesHierarchy\obj\Debug\DishesHierarchy.pdb
+C:\Users\kater\Documents\Visual Studio 2015\Projects\DishesHierarchy\obj\Debug\DishesHierarchy.csprojResolveAssemblyReference.cache
