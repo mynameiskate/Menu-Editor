@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Serialization;
 
 namespace DishesHierarchy
 {
@@ -17,7 +18,9 @@ namespace DishesHierarchy
             Meal = MealType.Brunch;
         }
 
+        [XmlElement("vegetarian")]
         public bool Vegeterian { get; set; }
+        [XmlElement("meal")]
         public MealType Meal { get; set; }
 
         public enum MealType

@@ -19,14 +19,15 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dishGrid" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="Auto" Margin="52,64,0,0"
-                  VerticalAlignment="Top" Width="Auto" ItemsSource="{Binding Menu}"  AutoGenerateColumns="False" MaxHeight="150"
-                  SelectionChanged="dishGrid_MouseClick" MinHeight="100" SelectionMode="Single" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <DataGrid x:Name="dishGrid" HorizontalAlignment="Left" Height="103" Margin="52,64,0,0" 
+                  VerticalAlignment="Top"  ItemsSource="{Binding Menu}"  AutoGenerateColumns="False" MaxHeight="52"
+                  SelectionChanged="dishGrid_MouseClick" MinHeight="100" SelectionMode="Single"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto" Width="250" GridLinesVisibility="None">
             <DataGrid.Columns>
-                <DataGridTemplateColumn  Header="Name" Width="Auto">
+                <DataGridTemplateColumn Header="Name" MaxWidth="60">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Style="{StaticResource ResourceKey=TextBlockStyle}" Text="{Binding Path=Name,  UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"/>
@@ -38,7 +39,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn  Header="Calories per serving" Width="Auto" IsReadOnly="True">
+                <DataGridTemplateColumn  Header="Calories per serving" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Style="{StaticResource ResourceKey=TextBlockStyle}" Text="{Binding Path=CaloriesPerServing, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"/>
@@ -50,7 +51,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn  Header="Portion Size" Width="Auto" IsReadOnly="True">
+                <DataGridTemplateColumn  Header="Portion Size" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Style="{StaticResource ResourceKey=TextBlockStyle}" Text="{Binding Path=PortionSize,  UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"/>
@@ -64,10 +65,12 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid x:Name="ingredientGrid" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="Auto" Margin="360,108,0,0" MinHeight="100" ScrollViewer.VerticalScrollBarVisibility="Auto"
-            VerticalAlignment="Top" Width="Auto" ItemsSource="{Binding Ingredients}" MaxHeight="130" AutoGenerateColumns="False" SelectionMode="Single" RenderTransformOrigin="0.5,0.5">
+        <DataGrid x:Name="ingredientGrid" HorizontalAlignment="Left" Height="Auto" Margin="347,66,0,0" 
+                  MinHeight="100" ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalAlignment="Top" 
+                  ItemsSource="{Binding Ingredients}" MaxHeight="80" AutoGenerateColumns="False" SelectionMode="Single" 
+                  Width="250" Grid.ColumnSpan="2">
             <DataGrid.Columns>
-                <DataGridTemplateColumn  Header="Name" Width="Auto">
+                <DataGridTemplateColumn  Header="Name" MaxWidth="60">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Style="{StaticResource ResourceKey=TextBlockStyle}" Text="{Binding Path=Name,  UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"/>
@@ -79,7 +82,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn  Header="Calories per gram" Width="Auto">
+                <DataGridTemplateColumn  Header="Calories per gram" MaxWidth="120">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Style="{StaticResource ResourceKey=TextBlockStyle}" Text="{Binding Path=CaloriesPerGram,  UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"/>
@@ -91,7 +94,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn  Header="Total, grams" Width="Auto">
+                <DataGridTemplateColumn  Header="Total, grams" MaxWidth="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Style="{StaticResource ResourceKey=TextBlockStyle}" Text="{Binding Path=Weight,  UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"/>
@@ -107,29 +110,28 @@
         </DataGrid>
         <Label x:Name="menuLabel" Grid.ColumnSpan="2" Content="Menu" HorizontalAlignment="Center" FontFamily="Futura"  FontSize="30" FontWeight="SemiBold"
                Margin="89,14,451.6,0" VerticalAlignment="Top" Width="153"/>
-        <Label x:Name="productLabel" Grid.ColumnSpan="2" Content="Ingredients" FontFamily="Futura" HorizontalAlignment="Center" 
-               FontSize="20" FontWeight="Light" Margin="360,27,180.6,0" VerticalAlignment="Top" Width="153" RenderTransformOrigin="0.5,0.5">
-        </Label>
-        <Label x:Name="allIngredientsLabel" Grid.ColumnSpan="2" Content="Full List of ingredients" FontFamily="Futura" HorizontalAlignment="Center" FontSize="20"
-               FontWeight="Light" Margin="360,234,137.6,0" VerticalAlignment="Top" Width="196" RenderTransformOrigin="0.5,0.5">
-        </Label>
-        <Button x:Name="btnDelete" FontFamily="Futura" Grid.ColumnSpan="2" Content="Delete" FontSize="15" Background="Plum"
-                Click="btnDelete_Click" HorizontalAlignment="Left" Margin="52,227,0,0" VerticalAlignment="Top" Width="88" Height="25"/>
-        <Button x:Name="btnAdd" FontFamily="Futura" Grid.ColumnSpan="2" Content="Add" FontSize="15" Background="Plum"
-                Click="btnAdd_Click" HorizontalAlignment="Left" Margin="52,257,0,0" VerticalAlignment="Top" Width="88" Height="25"/>
-        <Button x:Name="btnSerialize" FontFamily="Futura" Grid.ColumnSpan="2" Content="Serialize" FontSize="15" Click="btnSerialize_Click"
-            HorizontalAlignment="Left" Margin="52,287,0,0" VerticalAlignment="Top" Width="88" Height="25" Background="Plum"/>
-        <Button x:Name="btnDeserialize" FontFamily="Futura" Grid.ColumnSpan="2" Content="Deserialize" FontSize="15" Click="btnDeserialize_Click"
-            HorizontalAlignment="Left" Margin="52,317,0,0" VerticalAlignment="Top" Width="88" Height="25" Background="Plum"/>
-        <ComboBox x:Name="comboBox" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="161,317,0,0" VerticalAlignment="Top"
-                  FontFamily="Futura" Width="120" Height="25">
+        <Label x:Name="productLabel" Content="Ingredients" FontFamily="Futura" HorizontalAlignment="Center" 
+               FontSize="20" FontWeight="Light" Margin="347,27,194.4,0" VerticalAlignment="Top" Width="153" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+        <Label x:Name="allIngredientsLabel" Content="Full List of ingredients" FontFamily="Futura" HorizontalAlignment="Center" FontSize="20"
+               FontWeight="Light" Margin="347,229,151.4,0" VerticalAlignment="Top" Width="196" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnDelete" FontFamily="Futura" Content="Delete" FontSize="15" Background="Plum"
+                Click="btnDelete_Click" HorizontalAlignment="Left" Margin="52,227,0,0" VerticalAlignment="Top" Width="125" Height="25"/>
+        <Button x:Name="btnAdd" FontFamily="Futura" Content="Add dish" FontSize="15" Background="Plum"
+                Click="btnAdd_Click" HorizontalAlignment="Left" Margin="52,330,0,0" VerticalAlignment="Top" Width="125" Height="25"/>
+        <Button x:Name="btnSerialize" FontFamily="Futura" Content="Serialize" FontSize="15" Click="btnSerialize_Click"
+            HorizontalAlignment="Left" Margin="52,269,0,0" VerticalAlignment="Top" Width="125" Height="25" Background="Plum"/>
+        <Button x:Name="btnDeserialize" FontFamily="Futura" Content="Deserialize" FontSize="15" Click="btnDeserialize_Click"
+            HorizontalAlignment="Left" Margin="177,269,0,0" VerticalAlignment="Top" Width="125" Height="25" Background="Plum"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="52,299,0,0" VerticalAlignment="Top"
+                  FontFamily="Futura" Width="250" Height="25" RenderTransformOrigin="0.765,0.6">
             <TextBlock>Binary</TextBlock>
             <TextBlock>XML</TextBlock>
         </ComboBox>
-        <DataGrid x:Name="fullListGrid" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="Auto" Margin="360,299,0,0" MinHeight="100" ScrollViewer.VerticalScrollBarVisibility="Auto"
-            VerticalAlignment="Top" Width="Auto" ItemsSource="{Binding FullList}" MaxHeight="300" AutoGenerateColumns="False" SelectionMode="Single">
+        <DataGrid x:Name="fullListGrid" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="347,263,0,0" 
+            ScrollViewer.VerticalScrollBarVisibility="Auto" VerticalAlignment="Top" 
+            ItemsSource="{Binding FullList}" Height="100" AutoGenerateColumns="False"  SelectionMode="Single" Width="250">
             <DataGrid.Columns>
-                <DataGridTemplateColumn  Header="Name" Width="Auto">
+                <DataGridTemplateColumn  Header="Name"  MaxWidth="60">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Style="{StaticResource ResourceKey=TextBlockStyle}" Text="{Binding Name, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
@@ -141,7 +143,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn  Header="Calories per gram" Width="Auto">
+                <DataGridTemplateColumn  Header="Calories per gram" MaxWidth="120">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Style="{StaticResource ResourceKey=TextBlockStyle}" Text="{Binding CaloriesPerGram, NotifyOnValidationError=True, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
@@ -153,7 +155,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn  Header="Total, grams" Width="Auto">
+                <DataGridTemplateColumn  Header="Total, grams" MaxWidth="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Style="{StaticResource ResourceKey=TextBlockStyle}" Text="{Binding Weight, NotifyOnValidationError=True, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=True}"/>
@@ -167,19 +169,29 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnAddIngredient" FontFamily="Futura" Grid.ColumnSpan="2" Content="Add ingredient to dish" FontSize="15" Background="Plum"
-            Click="btnAddIngredient_Click" HorizontalAlignment="Left" Margin="360,269,0,0" VerticalAlignment="Top"  Height="25" Width="196"/>
-        <ComboBox x:Name="dishComboBox" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="161,257,0,0" VerticalAlignment="Top"
-            FontFamily="Futura" Width="120" Height="25">
+        <Button x:Name="btnAddIngredient" FontFamily="Futura" Content="Add ingredient to dish" FontSize="15" Background="Plum"
+            Click="btnAddIngredient_Click" HorizontalAlignment="Left" Margin="347,373,0,0" VerticalAlignment="Top"  Height="25"
+             Width="250" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="dishComboBox" HorizontalAlignment="Left" Margin="190,330,0,0" VerticalAlignment="Top"
+            FontFamily="Futura" Width="112" Height="25">
             <TextBlock><Run Text="MainCourse"/></TextBlock>
             <TextBlock><Run Text="Dessert"/></TextBlock>
-            <TextBlock><Run Text="Grains"/></TextBlock>
             <TextBlock><Run Text="Snacks"/></TextBlock>
             <TextBlock><Run Text="Drinks"/></TextBlock>
         </ComboBox>
-        <Button x:Name="btnRemoveIng" FontFamily="Futura" Grid.ColumnSpan="2" Content="Remove ingredient" FontSize="15" Background="Plum"
-            Click="btnRemoveIng_Click" HorizontalAlignment="Left" Margin="360,78,0,0" VerticalAlignment="Top" Width="196" Height="25"/>
-        <Label x:Name="optionsLabel" Grid.ColumnSpan="2" Content="Options" FontFamily="Futura" HorizontalAlignment="Center" 
-            FontSize="20" FontWeight="Light" Margin="52,185,488.6,0" VerticalAlignment="Top" Width="153" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="btnRemoveIng" FontFamily="Futura" Content="Remove ingredient" FontSize="15" Background="Plum"
+            Click="btnRemoveIng_Click" HorizontalAlignment="Left" Margin="347,172,0,0" VerticalAlignment="Top"
+            Width="250" Height="25" Grid.ColumnSpan="2"/>
+        <Label x:Name="optionsLabel" Content="Menu Options" FontFamily="Futura" HorizontalAlignment="Center" 
+            FontSize="20" FontWeight="Light" Margin="52,188,142.2,0" VerticalAlignment="Top" Width="153" RenderTransformOrigin="0.5,0.5"/>
+        <Button x:Name="btnOpen" FontFamily="Futura" Content="Disarchive" FontSize="15" Click="btnOpen_Click"
+            HorizontalAlignment="Left" Margin="177,227,0,0" VerticalAlignment="Top" Width="125" Height="25" Background="Plum"/>
+        <Button x:Name="btnPickPlugin" FontFamily="Futura" Content="Current plugin" FontSize="15" Click="btnPickPlugin_Click"
+            HorizontalAlignment="Left" Margin="52,365,0,0" VerticalAlignment="Top" Width="125" Height="25" Background="Plum" RenderTransformOrigin="1.657,-0.392"/>
+        <Label Name="pluginLbl" HorizontalAlignment="Left" Margin="190,365,0,0" 
+               VerticalAlignment="Top" Width="112" Height="25" FontFamily="Futura" FontSize="15" Background="White"
+               Content="{Binding ChosenPlugin.ArchiveType}" RenderTransformOrigin="0.497,-0.188"/>
+        <CheckBox Content="Use plugin" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.806,14.171" Margin="52,395,0,0" 
+                  Height="16" Width="104"  IsChecked="{Binding UsePlugins}" Name="pluginCheckBox" />
     </Grid>
 </Window>

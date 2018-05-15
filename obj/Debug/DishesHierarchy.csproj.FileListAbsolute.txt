@@ -11,4 +11,7 @@ C:\Users\kater\documents\visual studio 2015\Projects\DishesHierarchy\obj\Debug\D
 C:\Users\kater\documents\visual studio 2015\Projects\DishesHierarchy\obj\Debug\DishesHierarchy.csproj.GenerateResource.Cache
 C:\Users\kater\documents\visual studio 2015\Projects\DishesHierarchy\obj\Debug\DishesHierarchy.exe
 C:\Users\kater\documents\visual studio 2015\Projects\DishesHierarchy\obj\Debug\DishesHierarchy.pdb
-C:\Users\kater\Documents\Visual Studio 2015\Projects\DishesHierarchy\obj\Debug\DishesHierarchy.csprojResolveAssemblyReference.cache
+C:\Users\kater\Documents\Visual Studio 2015\Projects\DishesHierarchy\obj\Debug\DishesHierarchy.csproj.CoreCompileInputs.cache
+C:\Users\kater\Documents\Visual Studio 2015\Projects\DishesHierarchy\bin\Debug\PluginInterfaces.dll
+C:\Users\kater\Documents\Visual Studio 2015\Projects\DishesHierarchy\bin\Debug\PluginInterfaces.pdb
+C:\Users\kater\Documents\Visual Studio 2015\Projects\DishesHierarchy\obj\Debug\DishesHierarchy.csproj.CopyComplete

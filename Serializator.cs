@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
 
@@ -9,20 +10,20 @@ namespace DishesHierarchy
         private const string XMLPath = "menu.xml";
         private const string BinPath = "menu.dat";
 
-        public static bool XMLSerialize(DishList list)
+        public static string XMLSerialize(DishList list)
         {
             try
             {
-                XmlSerializer serializer = new XmlSerializer(list.GetType());
+                XmlSerializer serializer = new XmlSerializer(typeof(DishList), new XmlRootAttribute("dish_list"));
                 using (FileStream fs = new FileStream(XMLPath, FileMode.Create))
                 {
                     serializer.Serialize(fs, list);
                 }
-                return true;
+                return XMLPath;
             }
             catch
             {
-                return false;
+                return null;
             }
         }
 
@@ -31,7 +32,7 @@ namespace DishesHierarchy
             try
             {
                 var list = new DishList();
-                XmlSerializer serializer = new XmlSerializer(list.GetType());
+                XmlSerializer serializer = new XmlSerializer(typeof(DishList), new XmlRootAttribute("dish_list"));
                 using (FileStream fs = new FileStream(XMLPath, FileMode.Open))
                 {
                     list = (DishList)serializer.Deserialize(fs);
@@ -45,7 +46,7 @@ namespace DishesHierarchy
             
         }
 
-        public static bool BinarySerialize(DishList list)
+        public static string BinarySerialize(DishList list)
         {
             try
             {
@@ -55,11 +56,11 @@ namespace DishesHierarchy
                     formatter.Serialize(fs, list);
                     fs.Flush();
                 }
-                return true;
+                return BinPath;
             }
             catch
             {
-                return false;
+                return null;
             }
         }
 
